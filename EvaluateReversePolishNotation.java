@@ -1,24 +1,34 @@
-/** author April L.
-*
-*
-*/
 
-public int evalReverse(String[] strInputs){
-
-    Stack<Integer> stackInputs = new Stack<Integer>();
-    for (int i = 0; i < strInputs.length(); i++){
-      int sum = 0;
-      if (strInputs[i] == '/' || strInputs[i] == '+' ||
-          strInputs[i] == '-' || strInputs[i] == '*'){
-            int num1 = stackInputs.pop();
-            if(stackInputs.pop() != null){
-              int num2 = stackInputs.pop();
-              sum = num1 + strInputs[i] + num2;
-            }else if (form != 0){
-              form = form + strInputs[i] + num1;
-            }
+public class Solution {
+  public int evalRPN(String[] tokens){
+      int returnedValue = 0;
+      String operators = "+-*/";
+      Stack<String> stackInputs = new Stack<String>();
+      for (int i = 0; i < tokens.length; i++){
+        if (!operators.contains(tokens[i])){
+             stackInputs.push (tokens[i]);
+        }else{
+              int num1 = Integer.valueOf(stackInputs.pop());
+              int num2 = Integer.valueOf(stackInputs.pop());
+              int index = operators.indexOf(tokens[i]);
+              switch (index){
+                  case 0:
+                      stackInputs.push(String.valueOf(num1 + num2));
+                      break;
+                  case 1:
+                      stackInputs.push(String.valueOf(num2 - num1));
+                      break;
+                  case 2:
+                      stackInputs.push(String.valueOf(num2 * num1));
+                      break;
+                  case 3:
+                      stackInputs.push(String.valueOf(num2 / num1));
+                      break;
+              }
+        }
       }
-    }
 
-    return form;
+      returnedValue = Integer.valueOf(stackInputs.pop());
+      return returnedValue;
+  }
 }
