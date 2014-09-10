@@ -38,9 +38,9 @@ public class Solution {
               if (s.charAt(i) == s.charAt(j) && table[i + 1][j - 1] == 1){
                 //table[i][j] = table[i + 1][j - 1];
                 table[i][j] = 1;//changeable
-                //if (table[i + 1][j - 1] == 1 && k > maxLen){
+                if (k > maxLen){
                   longStr = s.substring(i, j + 1);
-                //}
+                }
               }else{
                 table[i][j] = 0;
               }
