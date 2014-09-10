@@ -6,7 +6,7 @@ public class Solution {
             return null;
           }
           //1. if s is a single letter
-          if (s.length() <= 1){
+          if (s.length() == 1){
             return s;
           }
 
