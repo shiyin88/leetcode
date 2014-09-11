@@ -21,7 +21,7 @@ public class Solution {
 
           // 2. check for sub-string of length 2.
           for (int i = 0; i< s.length() - 1; i++){
-            if (s.charAt(i) == s.charAt(i + 1)){
+            if (s.charAt( i) == s.charAt(i + 1)){
               table[i][i + 1] = 1;
               longStr = s.substring(i,i + 2);//[i,i+1]
             }
@@ -38,9 +38,10 @@ public class Solution {
               if (s.charAt(i) == s.charAt(j) && table[i + 1][j - 1] == 1){
                 //table[i][j] = table[i + 1][j - 1];
                 table[i][j] = 1;//changeable
-                //if (table[i + 1][j - 1] == 1 && k > maxLen){
+                if (k > maxLen){
+                  maxLen = k;
                   longStr = s.substring(i, j + 1);
-                //}
+                }
               }else{
                 table[i][j] = 0;
               }
