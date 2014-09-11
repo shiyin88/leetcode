@@ -7,12 +7,12 @@ public class Solution {
           String longest = "";
 
           for (int i = 0; i < s.length(); i++){
-
+            //center with odd numbers, and expand from center to both sides
             String temp = helper(i, i, s);
             if (temp.length() > longest.length()){
               longest = temp;
             }
-
+            //center with even numbers, and expand from center to both sides.
             temp = helper(i, i + 1, s);
             if (temp.length() > longest.length()){
               longest = temp;
