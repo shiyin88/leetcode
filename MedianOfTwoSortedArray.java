@@ -38,6 +38,7 @@ public class Solution {
       bMid = bMid + bStart;
 
       if (a[aMid] > b[bMid]){
+        //the area is from bmid to a mid,so we eliminate from start to bmid
         k = k - (bMid - bStart + 1);
         aEnd = aMid;
         bStart = bMid + 1;
