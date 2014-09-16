@@ -10,8 +10,8 @@ public class Solution {
 
     	public static int ladderLength(String start, String end, Set<String> dict) {
 
-		String curWord = null;
-		int curStep = 0;
+    		String curWord = null;
+    		int curStep = 0;
         if (dict.size() == 0){
           return 0;
         }
@@ -23,14 +23,14 @@ public class Solution {
         distanceQueue.add(1);
 
         while(!wordQueue.isEmpty()){
-	    	curWord = wordQueue.remove();
+	    	  curWord = wordQueue.remove();
 	        curStep = distanceQueue.remove();
 
-	      //ending condition: the first found end word has the shorthest
-            //path to start word
-	      if (curWord.equals(end)){
-              return curStep;
-	      }
+	         //ending condition: the first found end word has the shorthest
+          //path to start word
+  	      if (curWord.equals(end)){
+                return curStep;
+  	      }
 
           for (int i = 0; i < curWord.length(); i++){
 
