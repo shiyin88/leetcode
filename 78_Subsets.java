@@ -15,7 +15,8 @@ public class Solution {
         return result;
     }
     public void helper(List<Integer> path,List<List<Integer>> result, int[] S, int pos){
-        result.add(new ArrayList<Integer>(path));
+        result.add(new ArrayList<Integer>(path));//assign the value to a new arraylist object
+                                                //won't change result's value if path changed
         for (int i = pos; i < S.length; i++){
             path.add(S[i]);
             helper(path, result, S, i + 1);
