@@ -29,7 +29,7 @@ DFS traversal and combination
 if TreeNode {1, 2} and sum = 0;
 after walk through the Tree to the leaf node when root.val == 2 --> sum = -3
 As only when sum == 0; we put the value to arrayList result. so now we put nothing
-to the result. So we go to if (root == null) return; return to result. 
+to the result. So we go to if (root == null) return; return to result.
  */
 public class Solution {
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
@@ -51,7 +51,9 @@ public class Solution {
             if (sum == 0){
                 path.add(root.val);
                 result.add(new ArrayList(path));
-                path.remove(path.size() - 1);
+                path.remove(path.size() - 1);//put a remove function is for
+                //if we traversed left leaf node, we need to remove the left node and traverse to its
+                //right node again as well
             }
             return;//but that is not ending, we have to return to the DFS, and keep searching
         }
