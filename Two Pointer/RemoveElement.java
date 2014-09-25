@@ -1,4 +1,8 @@
 /**
+Given an array and a value, remove all instances of that value in place and return the new length.
+
+The order of elements can be changed. It doesn't matter what you leave beyond the new length.
+
 Analysis:
 Idea is to use double pointer (i and j )
 i scans all the elements in the array and j only passes not elem and
