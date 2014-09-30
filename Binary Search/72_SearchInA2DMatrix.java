@@ -27,7 +27,7 @@ public class Solution {
             int digit = matrix[mid/col][mid%col];
             if (target == digit){
                 return true;
-            }else if (target <= digit){
+            }else if (target < digit){
                 end = mid - 1;
             }else if (target > digit){
                 start = mid + 1;//plus 1 or minus one to avoid ifinite loop as the condition for the while loop is (start<=end)
