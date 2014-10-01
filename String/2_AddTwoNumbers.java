@@ -33,8 +33,8 @@ public class Solution {
                 p2 = p2.next;
             }
 
-            p3.next = new ListNode(carry % 10);
-            p3 = p3.next;
+            p3.next = new ListNode(carry % 10);//assign value to p3.next
+            p3 = p3.next; // pointing p3 to p3.next 
 
             carry = carry / 10;
        }
