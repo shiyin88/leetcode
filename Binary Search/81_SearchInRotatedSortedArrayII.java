@@ -32,7 +32,7 @@ public class Solution {
         return false;
     }
     //Sol II:
-    //almost same with I. the only difference is from line 38 to line 41. 
+    //almost same with I. the only difference is from line 38 to line 41.
     //we just avoid three numbers are different
     public int search(int[] A, int target) {
         int start = 0;
@@ -41,6 +41,7 @@ public class Solution {
 
         while (start + 1 < end){
             mid = start + (end - start)/2;
+            //this if statement is for dealing with the case when all three elements are same
             if (A[start] == A[mid]
                     && A[mid] == A[end]){
                 ++start;
