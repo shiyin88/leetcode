@@ -1,6 +1,7 @@
 /**
 Given a singly linked list where elements are sorted in ascending order,
 convert it to a height balanced BST.
+http://blog.csdn.net/fightforyourdream/article/details/16940205
 
  * Definition for singly-linked list.
  * public class ListNode {
