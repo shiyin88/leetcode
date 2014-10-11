@@ -17,13 +17,13 @@ public class Solution {
             return head;
         }
         /**
-         * Below MERGE-SORT is for a linkedlist with at least three elements
+         * Below MERGE-SORT is for a linkedlist with at least two elements
          * */
         //1. find middle
         ListNode middle = findMiddle(head);
         //2.cut into half, and recursively sort two lists
         ListNode right = sortList(middle.next);
-        middle.next = null;
+        middle.next = null;//ensure the first half list ends in the middle
         ListNode left = sortList(head);
         //3. merge two lists
         return merge(left, right);
