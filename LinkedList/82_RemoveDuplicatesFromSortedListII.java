@@ -27,8 +27,8 @@ public class Solution {
 
         ListNode node = head;// points to new ListNode(0), keep it there and not move. if we find the next nonduplicate node
         //then we can have node.next to point to next node
+        ListNode runner = node.next;//points to next node, it is head node
         while (node.next != null){
-            ListNode runner = node.next;//points to next node, it is head node
             while (runner.next != null && runner.next.val == runner.val){//if node == prev, loop node until its value != prev
                 runner = runner.next;
                 flag = true;
