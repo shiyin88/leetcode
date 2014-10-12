@@ -18,15 +18,23 @@ public int query(Node t1, Node t2, Node t) {
 
   	while (true) {
   		if (t.value < left) {
+
   			parent = t;
   			t = t.right;
-  		}s else if (t.value > right) {
+
+  		}else if (t.value > right) {
+
   			parent = t;
   			t = t.left;
+
   		} else if (t.value == left || t.value == right) {
+
   			return parent.value;
+
   		} else {
+
   			return t.value;
+
   		}
   	}
 }

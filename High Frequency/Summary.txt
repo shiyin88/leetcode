@@ -1,0 +1,16 @@
+
+K-Sum:
+1. 是否可以使用额外空间
+   yes: hashmap
+   no: O(n^(k - 1) + nlogn)
+2.给n个互不相同的数，让你取k个数，问这k个数之和是target的，有多少种方案
+state: f[n][k][target] 前n个数，取k个数，组成和为target的方案有多少个
+function: f[n][k][target] = f[n-1][k-1][target-a[n]] + f[n-1][k][target]
+
+Majority Number III;
+1. 保存k - 1 个数
+2. O(1) 查询是否在这个集合中
+3. O(1) counter++
+4. O(1) 插入
+5. 统计集合中的个数
+5. 对集合的所有数 count-- O(k)
