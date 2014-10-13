@@ -9,6 +9,13 @@ You are not suppose to use the library's sort function for this problem.
 
 Time Complexity : O(n)
 Space Complexity: O(1)
+
+cur从0到j扫描，
+遇到0，放在i位置，i后移；
+遇到2，放在j位置，j前移；
+遇到1，cur后移。
+扫描一遍得到排好序的数组。
+
 **/
 
 public class Solution {

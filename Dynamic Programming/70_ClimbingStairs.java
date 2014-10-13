@@ -12,7 +12,7 @@ public class Solution {
         int[] result = new int[n + 1];//represents the maximum ways of climbing stairs
 
         result[0] = 1;
-        result[1] = 1;
+        result[1] = 1;//one way to climb one stair
 
         for (int i = 2; i <= n; i++){
             result[i] = result[i - 1] + result[i - 2];
