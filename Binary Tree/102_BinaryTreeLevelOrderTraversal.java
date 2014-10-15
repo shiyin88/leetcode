@@ -4,6 +4,11 @@
 *For example:
 *Given binary tree {3,9,20,#,#,15,7},
 *return [ [3], [9, 20], [15, 7] ]
+
+此题是一个while循环,但是两个queue
+一个queue代表了父节点的一行的数
+另一个queue接收 (在遍历父节点的queue内的treenode后) 其queue里面Treenode的子节点们
+两个queens不断替换,最后实现结果
 */
 public class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
