@@ -36,7 +36,10 @@ public class Solution {
         if (sum < target){
             for (int i = pos; i < num.length; i++){
                if (i != pos && num[i] == num[i - 1]){
-                   continue;
+                   continue;//couldn't use return
+                   //e.x [1,2,2,5] if 5 == target but when pointer points to 2
+                   //the next one equals prev and it returned and not proceed
+                   //5 would be discarded
                }
                path.add(num[i]);
                helper(num, target, result, path, i + 1);

@@ -30,6 +30,9 @@ public class Solution {
         for (int i = pos; i <= n; i++){
             path.add(i);
             helper(n, k, path, result, i + 1);
+            //if i + 1 is changed to pos + 1 would lead to time exceed
+            //cause everytime the recursion instead of starts from i + 1
+            //it starts from the begining. nonnecessary work
             path.remove(path.size() - 1);
         }
     }

@@ -30,7 +30,11 @@ public class Solution {
         }
 
         for (int i = pos; i < s.length(); i++){
-            String prefix = s.substring(pos, i + 1);//get the string we need to check for palindrome
+            //get the substring of s 处理字符的DFS题都要用到substring来获取字符
+            String prefix = s.substring(pos, i + 1);
+            //instead of getting the char at index i, we want to get the partition
+            //from pos to i
+            //if prefix is not a palindrome we continue; otherwise add it to list
             if (!isPalindrome(prefix)){
                 continue;
             }
