@@ -9,6 +9,19 @@ You may assume no duplicate exists in the array.
 
 Binary Search
 
+在一个rotated array里面
+先要判断mid 和 start 以及 mid 和 end 看是否mid也一并被旋转了
+在while loop 里面
+if (A[start] >= A[mid]) 证明mid被旋转了 （及时被旋转了，mid到end也是递增序列）
+  然后判断target和mid的关系
+    1）target是否在[mid, end]中的递增数列
+    2）反之 在start和mid中的旋转数列
+if(A[start] < A[mid]) 证明mid没有被旋转
+    然后判断target和mid的关系
+    1）判断target是否在start和mid中的递增数列
+    2）或是在mid和end中的旋转数列
+跳出while loop后 判断A[start] / A[end] 是否为target 如不是，则返回-1
+
 */
 public class Solution {
     public int search(int[] A, int target) {

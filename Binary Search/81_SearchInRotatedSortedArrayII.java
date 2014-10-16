@@ -32,36 +32,42 @@ public class Solution {
         return false;
     }
     //Sol II:
-    //almost same with I. the only difference is from line 45 to line 48.
-    //we just avoid three numbers are different
-    public int search(int[] A, int target) {
+    //almost same with I. the only difference is line 44-45 and 61-62
+   //这里我们多加一个判断条件，当A[start] == A[mid]的时候，start++来防止它们两个相等，无法判断
+    public class Solution {
+    public static boolean search(int[] A, int target) {
         int start = 0;
         int end = A.length - 1;
-        int mid = 0;
+        while (start + 1 <end){
+            int mid = start + (end - start) / 2;
+            //提前判断A[mid] 和 target的值。 如果相等，we return true;
+            if (A[mid] == target){
+                return true;
 
-        while (start + 1 < end){
-            mid = start + (end - start)/2;
-            //this if statement is for dealing with the case when all three elements are same
-            if (A[start] == A[mid]
-                    && A[mid] == A[end]){
-                ++start;
             }
-            if (A[start] >= A[mid]){
-                if (A[mid] <= target && target <= A[end]){
-                    start = mid;
-                }else{
-                    end = mid;
-                }
-            }else{
+            if (A[start] < A[mid]){
+
                 if (A[start] <= target && target <= A[mid]){
                     end = mid;
                 }else{
                     start = mid;
                 }
+            }else if (A[start] > A[mid]){
+                if (A[mid] <= target && target <= A[end]){
+                    start = mid;
+                }else{
+                    end = mid;
+                }
+            }else{//skip duplicates. this is the point to remove duplicates
+            	++start;
             }
-       }
-        if (A[start] == target) return start;
-        if (A[end] == target) return end;
-        return -1;
+        }
+
+        if (A[start] == target) return true;
+        if (A[end] == target) return true;
+
+        return false;
+
     }
+}
 }
