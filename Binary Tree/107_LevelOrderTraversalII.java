@@ -22,6 +22,9 @@ return its bottom-up level order traversal as:
   [3]
 ]
 confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on OJ.
+这道题和上道题不同的是,这道题要把输出的所有list要倒序排列
+可以用add(0, value); 来完成,保证从queue poll出来的的数都放到index 0的位置上.
+由于queue是先进先出,即先出去的value在放到list后,就会放到list中最后面
  */
 public class Solution {
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
