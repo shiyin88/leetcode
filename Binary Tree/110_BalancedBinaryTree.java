@@ -19,12 +19,11 @@ public class Solution {
         int right = height(root.right);//get the height of right tree
         if (Math.abs(left - right) >1){
             return false;
-        }else{
+        }
             return isBalanced(root.left) && isBalanced(root.right);//ensure all the subtree's left and right subtrees no differs
             //by 1 or less
             //a tree has several subtrees and subnodes; gotta loop all the way down to
             //make sure left and right nodes are all balanced.
-        }
     }
     //get the height of the tree;
     public int height(TreeNode root){

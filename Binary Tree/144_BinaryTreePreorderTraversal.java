@@ -19,23 +19,13 @@ Note: Recursive solution is trivial, could you do it iteratively?
  *     TreeNode(int x) { val = x; }
  * }
  */
-public class Solution {
-    public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> result = new ArrayList<Integer>();
-        traverse(root, result);
-        return result;
-    }
 
-    public void traverse(TreeNode root, List<Integer> result){
-       if (root == null){
-           return;
-       }
-       result.add(root.val);
-       traverse(root.left, result);
-       traverse(root.right, result);
-    }
-}
 /**Stack
+这道题通过用stack来完成preorder traversal
+首先，list加入root.val
+如果 right 和 left ！= null stack先后push right 和 left node
+由于stack的特性是FIFO， 所以要想保住 root -> left -> right的特性，就要先push right
+然后是left
 */
 public class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
@@ -59,6 +49,28 @@ public class Solution {
         return result;
     }
 }
+public class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        traverse(root, result);
+        return result;
+    }
+
+    public void traverse(TreeNode root, List<Integer> result){
+       if (root == null){
+           return;
+       }
+       /**
+       即遵从preorder 的特性
+       root -> left -> right
+       当root == null的时候， 即我们已经从leaf node 走到了null，这时候要return
+       返回上枝**/
+       result.add(root.val);
+       traverse(root.left, result);
+       traverse(root.right, result);
+    }
+}
+
 /**
 divide and conquer
 */

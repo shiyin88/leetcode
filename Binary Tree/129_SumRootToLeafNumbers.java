@@ -34,6 +34,19 @@ Return the sum = 12 + 13 = 25.
 
  So,in order to track sum value of each calculation and not return the value of sum, we should use a collection
  or a wrapper class to hold it
+
+ 此题是通过divid and conquer
+ path中加入root的value
+ 通过recursion 遍历左子树 遍历右子树
+ 如不能继续遍历，即path.remove(last index) 上挑，继续转别处
+
+ base case：即到达leaf node (左和右为null)
+            在到达一个leaf node后，即遍历list中的数，转化成十进制数，加入到sum内
+            一条树遍历完成后，即上跳返回上枝
+            return
+另一个方法是： 转化成十进制
+            通过 value = 10 * value + input
+            不断乘10来完成
  */
 public class Solution {
     public static int sumNumbers(TreeNode root) {

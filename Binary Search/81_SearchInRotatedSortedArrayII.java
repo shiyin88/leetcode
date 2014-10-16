@@ -32,7 +32,7 @@ public class Solution {
         return false;
     }
     //Sol II:
-    //almost same with I. the only difference is from line 38 to line 41.
+    //almost same with I. the only difference is from line 45 to line 48.
     //we just avoid three numbers are different
     public int search(int[] A, int target) {
         int start = 0;

@@ -20,7 +20,7 @@ public class Solution {
 
     private static double findKthElement(int A[], int start_A, int B[], int start_B, int k){
 
-        if (start_A >= A.length) return B[start_B + k - 1];//if A has no more elements, just need to find the kth element in B
+        if (start_A >= A.   ) return B[start_B + k - 1];//if A has no more elements, just need to find the kth element in B
 
         if (start_B >= B.length) return A[start_A + k - 1];
 

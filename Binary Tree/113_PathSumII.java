@@ -40,6 +40,13 @@ public class Solution {
         helper(root, sum, result, path);
         return result;
     }
+    /**
+    这道题是用recursion做的。
+
+    base case： 当sum不断相减， 知道达到leaf node 并且sum = 0
+    把list放到result。 并且remove list中最后一位，return
+
+    非base： 遍历 root.left 和 root.right 并且 remove 最后一位**/
 
     private void helper(TreeNode root, int sum, List<List<Integer>> result, List<Integer> path){
 

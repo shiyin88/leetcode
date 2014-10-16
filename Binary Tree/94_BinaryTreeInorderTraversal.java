@@ -6,6 +6,18 @@
  *     TreeNode right;
  *     TreeNode(int x) { val = x; }
  * }
+ 题目十分巧妙。
+ Inodrder 为先遍历直到 root.left = null 然后上跳回溯到root，
+ 然后向右走 {
+            如果坐子树不为空 则继续遍历左子树
+            root
+            右子树
+          }
+在while loop内
+ 通过stack，不停地遍历左子树，加入stack
+ 当左子树 == null pop stack中的一个节点，放入list中
+    然后给node赋值它的右子树。
+ 通过以上条件不停遍历，知道stack内的treenode全部取出来，或是node 为空
  */
 
  //iteration
@@ -32,30 +44,5 @@ public class Solution {
         }
         return result;
 
-    }
-}
-
-
-public class Solution {
-    public List<Integer> postorderTraversal(TreeNode root) {
-
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        List<Integer> result = new ArrayList<Integer>();
-        stack.push(root);
-        while(!stack.isEmpty()){
-            TreeNode cur = stack.peek();
-          if (){
-            if (cur.left != null){
-              stack.push(cur.left);
-            }else if (cur.right ! = null){
-              stack.push(cur.right);
-            }else if (cur.right == null && cur.left == null){
-              result.add(stack.pop().val);
-            }
-          }else if (cur.)
-
-
-            TreeNode pre = cur;
-        }
     }
 }

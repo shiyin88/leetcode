@@ -19,6 +19,7 @@ return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
  *     TreeNode right;
  *     TreeNode(int x) { val = x; }
  * }
+ 此题是 用Recursion
  */
 public class Solution {
     public boolean hasPathSum(TreeNode root, int sum) {

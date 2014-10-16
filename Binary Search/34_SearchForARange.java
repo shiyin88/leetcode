@@ -16,6 +16,19 @@ return [3, 4].
  if question is asking how many times the target value occurs?
       Answer: after we find the starting and ending pos of a given target value, e.x [3, 4]
               ans = 4 - 3 + 1 = 2
+
+ 此题是通过两个while loop 搜索target在数组中的范围。
+ 在两个while loop 中都用到了二分法，但是当target = mid时，while loop分别搜索了
+ 从[start, target] 和 [target, end] 两个range
+
+ 在第一个while loop： 当target = A[mid]
+ 把 end = mid 这样做目的是重复搜索起点到发现的第一个target中的值
+ 当跳出while loop时， 首先查找是否A[start] 是否等于target 这样做的目的是保证找到的是range的起点
+
+ 第二个while loop： 当target = A[mid]
+ 把 start = mid 这样做目的是重复搜索第一个target到终点的值
+ 当跳出while loop时， 首先查找是否A[end] 是否等于target 这样做的目的是保证找到的是range的终点
+
  */
  public class Solution {
     public int[] searchRange(int[] A, int target) {

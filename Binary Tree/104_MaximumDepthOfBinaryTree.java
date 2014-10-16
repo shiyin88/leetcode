@@ -13,13 +13,9 @@ node down to the farthest leaf node.
  */
 public class Solution {
     public int maxDepth(TreeNode root) {
-        if (root == null) return 0;
+         if (root == null) return 0;
 
-        return maxDepthHelper(root, 1);
+         return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 
-    public int maxDepthHelper(TreeNode root, int depth){
-        if (root == null) return 0;
-        return Math.max(maxDepthHelper(root.left, depth), maxDepthHelper(root.right, depth)) + 1;
-    }
 }

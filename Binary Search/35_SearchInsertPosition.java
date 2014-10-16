@@ -8,6 +8,13 @@ Here are few examples.
 [1,3,5,6], 2 → 1
 [1,3,5,6], 7 → 4
 [1,3,5,6], 0 → 0
+
+target在数组中有五种情况，当和start和end比较时
+    1）< start ： 即在index 0
+    2）= start : 即在start
+    3) > start: 即在start + 1
+    4) = end :  即在end处
+    5) > end : 即在end + 1
 */
 public class Solution {
     public int searchInsert(int[] A, int target) {
