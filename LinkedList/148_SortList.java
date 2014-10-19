@@ -13,6 +13,9 @@ Sort a linked list in O(n log n) time using constant space complexity.
  */
 public class Solution {
     public ListNode sortList(ListNode head) {
+        /**
+        由于findMiddle中判断条件为fast != null && fast.next != null
+        切记***： 这里，要判断head == null || head.next == null的情况**/
         if (head == null || head.next == null){
             return head;
         }

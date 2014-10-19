@@ -12,10 +12,12 @@
  * 1->1->1->2->3, return 2->3.
  *
  Note. To handle the first is duplicate element, we put another node ahead the head.
- Use three pointers. node points to first node which doesn't duplicate with other nodes
- Runner and Runner.next nodes to run through the list and find duplicates.
- If there is duplicates, then remove the duplicates and let node.next = runner.next;
- If there isn't; then we move node and runenr to their next nodes.
+ Use three pointers.
+ Node : points to first node which doesn't duplicate with other nodes
+ Runner and Runner.next : nodes to run through the list and find duplicates.
+
+ If there is duplicates (flag = true): then remove the duplicates and let node.next = runner.next;
+ If there isn't (flag = false) : then we move node and runenr to their next nodes.
  */
 public class Solution {
     public ListNode deleteDuplicates(ListNode head) {
