@@ -23,6 +23,12 @@ public class Solution {
 }
 
 //ITERATION
+/**
+此题即判断：
+  1）取两个变量，sum 和 max
+  2）如果sum + i < 0 即重新加，把sum 赋值 0
+  3）max 时刻记录着最大值
+
 public class Solution {
     public int maxSubArray(int[] A) {
         int sum = 0;

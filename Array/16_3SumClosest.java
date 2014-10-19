@@ -9,7 +9,7 @@ Similar solution with 3Sum
     Still use one loop and inside the loop it has two pointers
 DIFFERENCE:
     use closest to keep track of the current closest distance to target
-    if sum - target < last closest
+    if Abs(sum - target) < last closest
         stores new closest distance to target
         store the sum of three numbers leading to the closest distance to target
     But we need to keep searching until we find the closest value
