@@ -2,6 +2,13 @@
 
 If you were only permitted to complete at most one transaction
 (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.
+
+有两个变量我们应该keep track of
+1) 买入价
+2）profit
+当买入价为最小，以及profit最大的时候，就是我们应该买入卖出的时候。
+所以在for loop中，我们应该通过寻找最小值找到最小买入价，
+以及通过寻找最大profit找到maximum profit
 **/
 
 public class Solution {
@@ -14,9 +21,10 @@ public class Solution {
         //need to notice that the sell day must be latter than the buy day
         //keep track of CURRENT minimum buying price and maximum profit
         int profit = 0;
-        for (int price : prices){
-           min = price < min ? price : min;
-           profit = (price - min) > profit ? (price - min) : profit;
+
+        for (int i : prices){
+            min = Math.min(min, i);
+            profit = Math.max(i - min, profit);
         }
         return profit;
     }
