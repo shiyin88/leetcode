@@ -2,9 +2,26 @@
 Given an array and a value, remove all instances of that value in place and return the new length.
 
 The order of elements can be changed. It doesn't matter what you leave beyond the new length.
+*/
 
+/**
+第一个解法思路为取一个pointer 其pointer所经过的元素都不等于elem
+遍历数组A， 当A[i] != elem时，我们把A[i] 赋给 A[pointer]并且pointer++指向下一个index
+          当A[i] == elem时，我们没有动作，只是i++,直到下一个数不是elem
+public int removeElement(int[] A, int elem) {
+
+        int pointer = 0;
+        for (int i = 0; i < A.length; i++){
+            if (A[i] != elem){
+                A[pointer] = A[i];
+                pointer++;
+            }
+        }
+        return pointer;
+}
+/**
 Analysis:
-Idea is to use double pointer (i and j )
+Idea is to use two pointers (i and j )
 i scans all the elements in the array and j only passes not elem and
 stores the final result. e.g.
 
@@ -25,7 +42,7 @@ and A = 1 2 4 4 5 3 6 7
                           i
                       j
 finally, A= 1 2 4 5 6 7
-*/
+**/
 public class Solution {
     public int removeElement(int[] A, int elem) {
         int i = 0;//pointer loop the array from start to end

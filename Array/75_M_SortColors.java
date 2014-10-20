@@ -16,10 +16,13 @@ cur从0到j扫描，
 遇到1，cur后移。
 扫描一遍得到排好序的数组。
 
+有两个指针，一个指向头，代表红色； 一个指向尾，指向蓝色
+i代表扫描从头到尾。如果扫描的是红色（0）则和指向红色的pointer替换位置
+               如果扫描的是蓝色(2) 则和指向蓝色的pointer替换位置
 **/
 
 public class Solution {
-     public static void sortColors(int[] A) {
+    public static void sortColors(int[] A) {
 	        int red = 0;
 	        int blue = A.length - 1;
 	        int i = 0;
@@ -35,7 +38,7 @@ public class Solution {
 	            	i++;
 	            }
 	        }
-	}
+	  }
 
     public static void swap(int[] A, int k, int j){
         int temp = A[k];
