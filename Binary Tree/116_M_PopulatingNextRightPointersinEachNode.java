@@ -35,6 +35,7 @@ Hide Tags Tree Depth-first Search
  *     TreeLinkNode left, right, next;
  *     TreeLinkNode(int x) { val = x; }
  * }
+ 图中1，3，7的next不用专门设为null，默认的就是null
  */
 public class Solution {
     public void connect(TreeLinkNode root) {
