@@ -26,6 +26,7 @@ class MinStack {
     }
 
     public void pop() {
+      //can't use minStack.peek()
         if (getMin() == stack.peek()){
             minStack.pop();
         }
