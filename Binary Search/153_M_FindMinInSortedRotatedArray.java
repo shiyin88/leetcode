@@ -11,6 +11,10 @@ You may assume no duplicate exists in the array.
 判断start 和 mid在数组的值
 从而判断取舍
 跳出while loop后，返回start， end在数组中最小值
+
+两种情况：
+1）num[s] < num[m]  如：4，5，6，7，0，1，2
+2）num[s] >= num[m] 如：5, 6, 7, 0, 1, 2, 3
 **/
 public class Solution {
     public int findMin(int[] num) {
