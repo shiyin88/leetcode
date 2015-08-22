@@ -19,6 +19,7 @@ Hide Tags Array Binary Search
 由于1, 10, 10, 10 这个是一个升序排列，不满足下面的二分法程序的。
 所以我们在whileloop最开始要判断 num[strt] & num[end]的关系。就如在while loop之前判断两者的关系。如果是升序排列
 则直接返回start的值。
+--放在while loop里面，是为了保证当多次剔除重复性数之后，还能继续判断首末的值。
 在while里面判断后，和while外面最初判断的重复，删去最开始的判断，简化程序。
 **/
 public class Solution {
