@@ -7,7 +7,7 @@ s = "leetcode",
 dict = ["leet", "code"].
 
 Return true because "leetcode" can be segmented as "leet code".
-Time: O(2^n)
+*******Exceeds time limit. Time: O(2^n)
 */
 
 public class Solution {
