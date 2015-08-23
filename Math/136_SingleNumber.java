@@ -8,6 +8,7 @@ Could you implement it without using extra memory?
 */
 
 //use XOR. 思路就是每位bit出现2次就清零，所以可以不断异或运算得出最终结
+//XOR : 相同，归0； 相异，归1
 public static int singleNumber(int[] A) {
 
 		int bit = 0;
