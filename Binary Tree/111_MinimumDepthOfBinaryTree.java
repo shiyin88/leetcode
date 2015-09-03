@@ -4,6 +4,11 @@ Given a binary tree, find its minimum depth.
 
 The minimum depth is the number of nodes along the shortest path
         from the root node down to the nearest leaf node.
+        此题是求最小depth。用queue来实现。既然queue是从左到右一次scan，
+        最先scan的leave节点必定是从root到leave的最小距离。
+        
+        建立两个queue，一个queue track node， 另一个track node与之对应的height
+        return height
 */
 public class Solution {
     public int minDepth(TreeNode root) {
