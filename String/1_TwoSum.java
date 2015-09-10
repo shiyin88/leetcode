@@ -41,8 +41,6 @@ public class Solution {
     */
     public int[] twoSum2(int[] numbers, int target) {
 
-      public int[] twoSum(int[] numbers, int target) {
-
       int[] result = new int[2];
       HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 
