@@ -32,7 +32,7 @@ public class Solution {
             return;
         }
         for (int i = 0; i < num.length; i++){
-            if (visited[i] == 1 || (i != 0 && num[i] == num[i - 1] && visited[i - 1] == 0)){
+            if (visited[i] == 1 || (i != 0 && num[i] == num[i - 1] && visited[i - 1] == 1)){
                continue;
             }
             visited[i] = 1;
