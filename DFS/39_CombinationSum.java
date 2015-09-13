@@ -12,6 +12,15 @@ For example, given candidate set 2,3,6,7 and target 7,
 A solution set is:
 [7]
 [2, 2, 3]
+设定pos， 防止出现重复数列
+如果没有pos这个数值，则出现数列为：
+Output:
+[[1,1,1],[1,2],[2,1]]
+
+Input:
+[1,2], 3
+Expected:
+[[1,1,1],[1,2]]
 */
 
 public class Solution {
