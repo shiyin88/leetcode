@@ -10,7 +10,9 @@ state： f[x][y] 从起点走到x，y的最短路径
 function:
         x >= 1 && y >=1
             f[x][y] = Math.min(f[x - 1][y], f[x][y - 1]) + cost[x][y];
-Initialization:
+Initialization:先初始化sum的x和y坐标(i, 0) 和 (0, i)
+条件为，每次的sum[i,k] = Math.min(sum[i-1, k], sum[i, k - 1]) + grid[i][k]
+即，sum表示已知到此点的值，由于可以走left或是bottom， 所以当前sum[i][k]为left和bottom中最小值+当前的grid[i][k]
         f[0][0] = cost[0][0];
         f[i][0] = f[i - 1][0] + cost[i][0];
         f[0][i] = f[0][i - 1] + grid[0][i]
