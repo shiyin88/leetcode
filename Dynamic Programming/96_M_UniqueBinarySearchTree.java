@@ -35,11 +35,18 @@ We fill the array from bottom to up, starting from 0 to n.
 public class Solution {
     public int numTrees(int n) {
         int[] result = new int[n + 1];
+        //初始化，当n=0，即empty tree，一种BST形式。
         result[0] = 1;
-
         for (int i = 1; i <= n; i++){
-            for (int j = 0; j < i; j++){
-                result[i] += result[j] * result[i- j - 1];
+            for (int k = 0; k < i; k++) {
+                /**i表示以i为root所以能组成BST的可能形式。
+                 * 由于左右结点的变换性，所以i需要累加得出当前i个数下
+                 * 所有可能的BST
+                 *      如果当前以k + 1为root，
+                 *      k为k + 1的左边left node
+                 *      i - k - 1为k + 1的right node
+                 * */
+                result[i] += result[k] * result[i - k - 1];
             }
         }
         return result[n];
