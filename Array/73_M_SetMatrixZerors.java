@@ -65,7 +65,12 @@ public class Solution {
 /**solution 2 : space(m + n)
  * create two boolean arrays : row and col
  * if a matrix == 0; we its row and col in the boolean array to 0
- * for loop : if given row or col is zero, then we set the matrix to zero**/
+ * for loop : if given row or col is zero, then we set the matrix to zero
+ * 给定两个boolean分别表示row和col
+ 首先遍历matrix的每个cell， 如果cell = 0，则标注cell所在的row和col 为0
+ 然后再次遍历，如果matrix[i][k]的cell的i在row 以及k在col的boolean为true，则表示
+ 这行以及这列为0，则把matrix[i][k]设为0
+ **/
 public class Solution {
     public void setZeroes(int[][] matrix) {
         boolean[] row = new boolean[matrix.length];
