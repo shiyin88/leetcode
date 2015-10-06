@@ -7,8 +7,10 @@ Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 */
 public class Solution {
     public List<String> letterCombinations(String digits) {
-
         List<String> result = new ArrayList<String>();
+        if (digits == null || digits.length() == 0){
+            return result;
+        }
         StringBuilder sb = new StringBuilder();
         helper(digits, result, sb);
         return result;
@@ -27,6 +29,7 @@ public class Solution {
         // index表示当前应该取哪个数字里面的字母了，这里取到的数字应该是digits中对应上一外层递归的后面一个字符
         // 比如给定digits是23，由于最开始path.length()长度为0，则会取到digits.charAt(0)对应的数字
         // 由于for循环中path.append()操作，path.length()长度加1，此时进入内层递归后则会取到charAt(1)对应的数字
+        //get every single digit from String digits. Initiallay as sb is a empty,so the index = 0;
         int index = Character.getNumericValue(digits.charAt(sb.length()));//get each digit in the digits string
 
         for (int i = 0; i < map[index].length; i++){
