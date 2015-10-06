@@ -26,14 +26,18 @@ public class Solution {
 	        int red = 0;
 	        int blue = A.length - 1;
 	        int i = 0;
+	        //用blue表示结尾，即每当扫描一次，blue指针向前移一位，blue后的不再scan
 	        while (i <= blue){//i should iterate every index including the last index
 	            if (A[i] == 0){
 	                swap(A, i, red);
 	                red++;
 	                i++;
+	                 
 	            }else if (A[i] == 2){//if A[i] is blue, we swap them but don't increase i cause the exchanged value maybe 0
 	                swap(A, i, blue);
 	                blue--;
+	                //在置换和blue所在位置的值后，不移动i。因为置换后，i所在的值已经变化了。
+	                //i的值需要check是否是1或是2
 	            }else{
 	            	i++;
 	            }
