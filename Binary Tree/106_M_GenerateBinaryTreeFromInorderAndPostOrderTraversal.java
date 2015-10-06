@@ -9,6 +9,10 @@ You may assume that duplicates do not exist in the tree.
  *     TreeNode right;
  *     TreeNode(int x) { val = x; }
  * }
+ * 
+in-order:   4 2 5  (1)  6 7 3 8
+post-order: 4 5 2  6 7 8 3  (1)
+http://www.programcreek.com/2013/01/construct-binary-tree-from-inorder-and-postorder-traversal/
  分析：1.如何根据树得中根与后根求树，简单说明一下：
 （1）后根遍历的最后一个节点是该树的根；root : postorder[pend];
 （2）在中根遍历中找到该节点，下标记为index，该节点将树左右分开
