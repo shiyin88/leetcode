@@ -19,8 +19,32 @@ Show Tags
 Show Similar Problems
 
 
- * However, the time is O(n*k).
+ *
  * **/
+ //Solution 1  space : O(1) time: O(n)
+ //http://www.programcreek.com/2015/03/rotate-array-in-java/
+public class Solution {
+    public void rotate(int[] nums, int k) {
+        
+        k = k % nums.length;
+        k = nums.length - k;
+        swap(nums, 0, k - 1);
+        swap(nums, k, nums.length - 1);
+        swap(nums, 0, nums.length - 1);
+        
+    }
+    
+    public void swap(int[] nums, int s, int e) {
+        while (s < e) {
+            int temp = nums[s];
+            nums[s] = nums[e];
+            nums[e] = temp;
+            s++;
+            e--;
+        }
+    }
+}
+//bubble sort  However, the time is O(n*k).
 public class Solution {
     public void rotate(int[] nums, int k) {
         if (nums == null || nums.length == 0) {
