@@ -36,3 +36,45 @@ public class Solution {
 
     }
 }
+
+/**用两个queue
+ * 一个记录节点，另一个记录从root到当前node的sum value
+ * exit 状态为：如果当前node所对应的value = sum 则为true
+ * 
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public boolean hasPathSum(TreeNode root, int sum) {
+       if (root == null) return false;
+       
+       Queue<TreeNode> q = new LinkedList<TreeNode>();
+       Queue<Integer> values = new LinkedList<Integer>();
+       q.offer(root);
+       values.offer(root.val);
+       
+       while (!q.isEmpty()) {
+           TreeNode node = q.poll();
+           int val = values.poll();
+           if (node.left == null && node.right == null && val == sum) {
+               return true;
+           }
+           
+           if (node.left != null) {
+               q.offer(node.left);
+               values.offer(val + node.left.val);
+           }
+           if (node.right != null) {
+               q.offer(node.right);
+               values.offer(val + node.right.val);
+           }
+       }
+       return false;
+    }
+    
+}
