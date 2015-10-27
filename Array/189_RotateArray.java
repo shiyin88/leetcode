@@ -44,6 +44,7 @@ public class Solution {
         }
     }
 }
+//通过把末尾的前移移到首尾，从len-1 -> 0一直从后到前移，移动k位
 //bubble sort  However, the time is O(n*k).
 public class Solution {
     public void rotate(int[] nums, int k) {
